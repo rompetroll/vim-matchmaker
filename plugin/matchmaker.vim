@@ -8,6 +8,10 @@ let s:enabled = 0
 let g:matchmaker_matchpriority = get(g:, 'matchmaker_matchpriority', 10)
 
 hi default Matchmaker term=underline    ctermbg=238     guibg=#dddddd
+" allow linking to existing highlight group customized colors
+if exists('g:matchmaker_hl_group')
+    exe "highlight! link Matchmaker " . get(g:, 'matchmaker_hl_group')
+endif
 
 " }}}
 
